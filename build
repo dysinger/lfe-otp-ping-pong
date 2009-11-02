@@ -5,11 +5,13 @@ main([]) -> build(compile);
 main([Task|Tasks]) -> build(list_to_atom(Task)), main(Tasks).
 
 build(clean) ->
-    [file:delete(X) || X <- filelib:wildcard(filename:join("ebin","*"))],
-    file:del_dir("ebin");
+    [ok = file:delete(X) || X <- filelib:wildcard(filename:join("ebin","*"))],
+    ok = file:del_dir("ebin");
 
 build(compile) ->
     file:make_dir("ebin"),
+    [{ok,_} = file:copy(X,filename:join("ebin",filename:basename(X))) ||
+        X <- filelib:wildcard(filename:join("src","*.app"))],
     [case lfe_comp:file(X,[report,{outdir,"ebin"}]) of
          error -> halt(1);
          {ok,_} -> ok
