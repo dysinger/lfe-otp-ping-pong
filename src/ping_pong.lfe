@@ -1,4 +1,4 @@
-(defmodule ping_pong_srv
+(defmodule ping_pong
   (export (ping 0))
   (export (start_link 0) (init 1) (handle_call 3) (handle_cast 2)
           (handle_info 2) (terminate 2) (code_change 3)))
@@ -6,7 +6,7 @@
 ;; client
 
 (defun ping ()
-  (: gen_server call 'ping_pong_srv 'ping))
+  (: gen_server call 'ping_pong 'ping))
 
 ;; callbacks
 
@@ -14,7 +14,7 @@
 
 (defun start_link ()
   (: gen_server start_link
-    (tuple 'local 'ping_pong_srv) 'ping_pong_srv (list) (list)))
+    (tuple 'local 'ping_pong) 'ping_pong (list) (list)))
 
 (defun init (args)
   (tuple 'ok (make-state pings 0)))

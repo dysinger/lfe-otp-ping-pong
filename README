@@ -13,11 +13,11 @@ $ erl -pa ebin
 Eshell V5.7.3  (abort with ^G)
 1> application:start(ping_pong).
 ok
-2> ping_pong_srv:ping().
+2> ping_pong:ping().
 {pong,1}
-3> ping_pong_srv:ping().
+3> ping_pong:ping().
 {pong,2}
-4> ping_pong_srv:ping().
+4> ping_pong:ping().
 {pong,3}
 6> q().
 

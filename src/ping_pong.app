@@ -10,7 +10,7 @@
   %% All modules used by the application.
   {modules,
    [
-    ping_pong, ping_pong_sup, ping_pong_srv
+    ping_pong_app, ping_pong_sup, ping_pong
    ]},
 
   %% All of the registered names the application uses. This can be ignored.
@@ -35,6 +35,6 @@
   {env, []},
 
   %% The Module and Args used to start this application.
-  {mod, {ping_pong, []}}
+  {mod, {ping_pong_app, []}}
  ]
 }.

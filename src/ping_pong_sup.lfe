@@ -8,10 +8,10 @@
 (defun init (args)
   (let* ((flags (tuple 'one_for_one 1000 3600))
          (specs (list
-                 (tuple 'ping_pong_srv
-                        (tuple 'ping_pong_srv 'start_link (list))
+                 (tuple 'ping_pong
+                        (tuple 'ping_pong 'start_link (list))
                         'permanent
                         2000
                         'worker
-                        (list 'ping_pong_srv)))))
+                        (list 'ping_pong)))))
     (tuple 'ok (tuple flags specs))))

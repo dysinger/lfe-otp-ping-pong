@@ -1,4 +1,4 @@
-(defmodule ping_pong
+(defmodule ping_pong_app
   (export (start 2) (stop 1)))
 
 (defun start (type start-args)
