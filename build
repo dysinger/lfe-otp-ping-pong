@@ -9,7 +9,7 @@ build(clean) ->
     file:del_dir("ebin");
 
 build(compile) ->
-    file:build_dir("ebin"),
+    file:make_dir("ebin"),
     [case lfe_comp:file(X,[report,{outdir,"ebin"}]) of
          error -> halt(1);
          {ok,_} -> ok
