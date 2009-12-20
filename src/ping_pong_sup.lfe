@@ -1,4 +1,5 @@
 (defmodule ping_pong_sup
+  (behaviour supervisor)
   (export (start_link 0) (init 1)))
 
 (defun start_link ()
