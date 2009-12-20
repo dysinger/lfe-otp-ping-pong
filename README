@@ -8,8 +8,8 @@ and Erlang / OTP @
 
 Example Usage:
 
-$ ./build 
-$ erl -pa ebin 
+$ ./rebar compile
+$ erl -pa ebin
 Eshell V5.7.3  (abort with ^G)
 1> application:start(ping_pong).
 ok
