@@ -1,4 +1,8 @@
+# LFE (Lisp Flavored Erlang) Example Application
+
 This is an example of how you can use LFE to code Erlang OTP applications.
+
+## Background Information
 
 Read more about LFE @
   * http://github.com/rvirding/lfe
@@ -6,24 +10,28 @@ Read more about LFE @
 and Erlang / OTP @
   * http://www.erlang.org/doc
 
-Example Usage:
+## Example Usage
 
-$ ./rebar compile
-$ erl -pa ebin
-Eshell V5.7.3  (abort with ^G)
-1> application:start(ping_pong).
-ok
-2> ping_pong:ping().
-{pong,1}
-3> ping_pong:ping().
-{pong,2}
-4> ping_pong:ping().
-{pong,3}
-6> q().
+This example assumes that you have installed LFE globally.
+
+    $ ./rebar compile
+    $ erl -pa ebin
+    Eshell V5.7.3  (abort with ^G)
+    1> application:start(ping_pong).
+    ok
+    2> ping_pong:ping().
+    {pong,1}
+    3> ping_pong:ping().
+    {pong,2}
+    4> ping_pong:ping().
+    {pong,3}
+    6> q().
 
 As you can see it's not much - just a couple hours hacking, but it proves it
 works and you don't have to code in erlang syntax to get erlang vm awesome
 sauce.
+
+## License
 
 Copyright (c) Tim Dysinger tim <[<-on->]> dysinger.net
 
